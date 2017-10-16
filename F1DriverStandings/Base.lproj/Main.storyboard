@@ -40,20 +40,19 @@
                                         <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kl4-oE-Rin">
                                             <rect key="frame" x="0.0" y="0.0" width="145" height="110"/>
                                             <subviews>
-                                                <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61v-TW-nCO">
-                                                    <rect key="frame" x="0.0" y="26" width="145" height="21"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="W8X-06-4JK"/>
-                                                    </constraints>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxj-5x-Dxn">
-                                                    <rect key="frame" x="8" y="8" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxj-5x-Dxn">
+                                                    <rect key="frame" x="8" y="10" width="8" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61v-TW-nCO">
+                                                    <rect key="frame" x="0.0" y="26" width="145" height="21"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="W8X-06-4JK"/>
+                                                    </constraints>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNZ-sV-Fu1">
                                                     <rect key="frame" x="5" y="26" width="96.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -81,13 +80,15 @@
                                                 <constraint firstItem="6UO-uG-JUO" firstAttribute="top" secondItem="61v-TW-nCO" secondAttribute="bottom" id="boz-mr-itR"/>
                                                 <constraint firstItem="61v-TW-nCO" firstAttribute="leading" secondItem="Kl4-oE-Rin" secondAttribute="leading" id="hQc-n0-lRj"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="6UO-uG-JUO" secondAttribute="trailing" id="mbw-QY-Q1t"/>
+                                                <constraint firstItem="kxj-5x-Dxn" firstAttribute="leading" secondItem="Kl4-oE-Rin" secondAttribute="leading" constant="8" id="oKk-hs-f4A"/>
                                                 <constraint firstItem="61v-TW-nCO" firstAttribute="top" secondItem="Kl4-oE-Rin" secondAttribute="top" constant="26" id="pfn-UG-hJV"/>
                                                 <constraint firstItem="bNZ-sV-Fu1" firstAttribute="top" secondItem="Kl4-oE-Rin" secondAttribute="topMargin" constant="18" id="sRX-jG-2Bz"/>
                                                 <constraint firstAttribute="trailing" secondItem="61v-TW-nCO" secondAttribute="trailing" id="sjw-Cf-woo"/>
+                                                <constraint firstItem="bNZ-sV-Fu1" firstAttribute="top" secondItem="kxj-5x-Dxn" secondAttribute="bottom" constant="-5" id="xui-hb-Zc8"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ponts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14k-fc-3mu">
-                                            <rect key="frame" x="54" y="93" width="37" height="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14k-fc-3mu">
+                                            <rect key="frame" x="52.5" y="93" width="40" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
