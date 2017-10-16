@@ -7,7 +7,7 @@
 //
 
 #import "CollectionViewController.h"
-#import "CollectionViewCell.h"
+#import "DriverCell.h"
 #import "F1Api.h"
 #import "Driver.h"
 
@@ -36,7 +36,7 @@ static NSString * const reuseIdentifier = @"DriverCell";
             NSArray *dictionaries = [dictionary valueForKeyPath:@"MRData.StandingsTable.StandingsLists.DriverStandings"];
             NSMutableArray *arr = [[NSMutableArray alloc]init]; //Temp array to store drivers
             
-            for (NSDictionary *dict in dictionaries[0]) {
+            for (NSDictionary *dict in dictionaries[0]) { // As there is a array in a array set loop to only look at first index
                 Driver *driver = [Driver driversWithDictionary:dict];
                 [arr addObject:driver]; // Add each driver to tempory array
             }
@@ -74,16 +74,25 @@ static NSString * const reuseIdentifier = @"DriverCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 21;
+    return [self.drivers count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    DriverCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
+    // If cell empty
+    if (!cell) {
+        cell = [[DriverCell alloc]init];
+    }
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Driver *driver = [self.drivers objectAtIndex:indexPath.row];
+    DriverCell *driverCell = (DriverCell*)cell;
+    [driverCell updateUI:driver];
 }
 
 #pragma mark <UICollectionViewDelegate>
