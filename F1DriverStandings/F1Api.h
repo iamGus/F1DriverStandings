@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^onComplete)(NSArray * __nullable dataArray, NSString * __nullable errorMessage);
+typedef void (^onComplete)(NSDictionary * __nullable dataArray, NSString * __nullable errorMessage);
 
 @interface F1Api : NSObject
 

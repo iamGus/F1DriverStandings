@@ -11,14 +11,14 @@
 @interface Driver : NSObject
 
 @property (nonatomic, strong) NSString *firstName;
-//@property (nonatomic, strong) NSString *lastName;
-//@property (assign) int *position;
-//@property (assign) int *points;
-//@property (assign) int *wins;
-//@property (nonatomic, strong) NSString *DriverCode;
-//@property (nonatomic, strong) NSURL *wikipediaUrl;
-//@property (nonatomic, strong) NSString *dateOfBirth;
-//@property (nonatomic, strong) NSString *nationality;
+@property (nonatomic, strong) NSString *lastName;
+@property (assign) int *position;
+@property (assign) int *points;
+@property (assign) int *wins;
+@property (nonatomic, strong) NSString *driverCode;
+@property (nonatomic, strong) NSURL *wikipediaUrl;
+@property (nonatomic, strong) NSString *dateOfBirth;
+@property (nonatomic, strong) NSString *nationality;
 
 + (instancetype) driversWithDictionary:(NSDictionary *) dictionary;
 

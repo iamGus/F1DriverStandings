@@ -24,19 +24,28 @@ static NSString * const reuseIdentifier = @"DriverCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[F1Api instance] getDrivers:^(NSArray * _Nullable dataArray, NSString * _Nullable errorMessage) {
-        if (dataArray) {
+    self.drivers = [NSMutableArray array];
+    [self refreshDrivers];
+   
+}
+
+- (void) refreshDrivers {
+    [[F1Api instance] getDrivers:^(NSDictionary * _Nullable dictionary, NSString * _Nullable errorMessage) {
+        if (dictionary) {
             
-            NSArray *dictionary = [dataArray valueForKeyPath:@"MRData.StandingsTable.StandingsLists.DriverStandings"];
-            NSLog(@"got here");
+            NSArray *dictionaries = [dictionary valueForKeyPath:@"MRData.StandingsTable.StandingsLists.DriverStandings"];
+            NSMutableArray *arr = [[NSMutableArray alloc]init]; //Temp array to store drivers
             
-            for (NSDictionary *dict in dictionary) {
+            for (NSDictionary *dict in dictionaries[0]) {
                 Driver *driver = [Driver driversWithDictionary:dict];
-                [self.drivers addObject:driver];
+                [arr addObject:driver]; // Add each driver to tempory array
             }
             
+            self.drivers = arr; // Add tempory array of all drivers to main drivers array
             NSLog(@"%@",self.drivers);
-            [self updateData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.collectionView reloadData];
+            });
             
             
         } else if (errorMessage) {
@@ -44,14 +53,6 @@ static NSString * const reuseIdentifier = @"DriverCell";
             NSLog(@"Error: %@", errorMessage);
         }
     }];
-    
-   
-}
-
-- (void) updateData {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.collectionView reloadData];
-    });
 }
 
 /*

@@ -32,10 +32,10 @@
         
         if (data != nil) { // If data not nil
             NSError *error;
-            NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error]; // Json into dictionary
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error]; // Json into dictionary
             
             if (error == nil) { // If no errors then parse the json
-                NSLog(@"%@", json.description);
+                //NSLog(@"%@", json.description);
                 completionHandler(json, nil);
             } else {
                 completionHandler(nil, @"Data parsing failed!");

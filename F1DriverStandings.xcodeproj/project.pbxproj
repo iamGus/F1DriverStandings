@@ -71,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				18D7DB9B1F90F494004A6473 /* Networking */,
-				18D7DB921F90BDFD004A6473 /* CollectionView */,
+				18D7DB921F90BDFD004A6473 /* ViewController */,
 				18D7DB961F90C35C004A6473 /* View */,
 				18D7DB971F90C984004A6473 /* Model */,
 				18D7DB7B1F90B408004A6473 /* AppDelegate.h */,
@@ -95,13 +95,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		18D7DB921F90BDFD004A6473 /* CollectionView */ = {
+		18D7DB921F90BDFD004A6473 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				18D7DB8F1F90BDED004A6473 /* CollectionViewController.h */,
 				18D7DB901F90BDED004A6473 /* CollectionViewController.m */,
 			);
-			name = CollectionView;
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		18D7DB961F90C35C004A6473 /* View */ = {
@@ -368,6 +368,7 @@
 				18D7DB8E1F90B408004A6473 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
