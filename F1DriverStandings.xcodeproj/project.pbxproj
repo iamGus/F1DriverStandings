@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1802F2CE1F94D7B2004CDEDC /* DriverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F2CD1F94D7B2004CDEDC /* DriverCell.m */; };
+		1802F2D11F95005C004CDEDC /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F2D01F95005C004CDEDC /* WebViewController.m */; };
 		18D7DB7A1F90B408004A6473 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D7DB791F90B408004A6473 /* main.m */; };
 		18D7DB7D1F90B408004A6473 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D7DB7C1F90B408004A6473 /* AppDelegate.m */; };
 		18D7DB801F90B408004A6473 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D7DB7F1F90B408004A6473 /* ViewController.m */; };
@@ -22,6 +23,8 @@
 /* Begin PBXFileReference section */
 		1802F2CC1F94D7B2004CDEDC /* DriverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverCell.h; sourceTree = "<group>"; };
 		1802F2CD1F94D7B2004CDEDC /* DriverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverCell.m; sourceTree = "<group>"; };
+		1802F2CF1F95005C004CDEDC /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		1802F2D01F95005C004CDEDC /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		18D7DB751F90B408004A6473 /* F1DriverStandings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = F1DriverStandings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D7DB791F90B408004A6473 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18D7DB7B1F90B408004A6473 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -100,6 +103,8 @@
 			children = (
 				18D7DB8F1F90BDED004A6473 /* CollectionViewController.h */,
 				18D7DB901F90BDED004A6473 /* CollectionViewController.m */,
+				1802F2CF1F95005C004CDEDC /* WebViewController.h */,
+				1802F2D01F95005C004CDEDC /* WebViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				18D7DB9E1F90F4C7004A6473 /* F1Api.m in Sources */,
 				18D7DB911F90BDED004A6473 /* CollectionViewController.m in Sources */,
 				18D7DB9A1F90CA22004A6473 /* Driver.m in Sources */,
+				1802F2D11F95005C004CDEDC /* WebViewController.m in Sources */,
 				18D7DB801F90B408004A6473 /* ViewController.m in Sources */,
 				18D7DB7D1F90B408004A6473 /* AppDelegate.m in Sources */,
 				1802F2CE1F94D7B2004CDEDC /* DriverCell.m in Sources */,

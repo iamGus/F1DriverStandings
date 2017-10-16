@@ -10,6 +10,7 @@
 #import "DriverCell.h"
 #import "F1Api.h"
 #import "Driver.h"
+#import "WebViewController.h"
 
 @interface CollectionViewController ()
 
@@ -96,6 +97,23 @@ static NSString * const reuseIdentifier = @"DriverCell";
 }
 
 #pragma mark <UICollectionViewDelegate>
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //[self performSegueWithIdentifier:@"WebView" sender:self];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"WebView"]) {
+        NSIndexPath *selectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
+        
+        Driver *driver = self.drivers[selectedIndexPath.row];
+        WebViewController *webViewController = segue.destinationViewController;
+        webViewController.driver = driver;
+    }
+}
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking

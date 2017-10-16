@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VoO-yZ-uFJ">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,8 +14,8 @@
         <scene sceneID="dAS-Bf-TOe">
             <objects>
                 <collectionViewController id="U6O-54-O5U" customClass="CollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="kSt-3o-d27">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="kSt-3o-d27">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="3" id="J2F-9K-3eq">
@@ -25,7 +25,7 @@
                             <inset key="sectionInset" minX="10" minY="25" maxX="10" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <imageView key="backgroundView" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="f1-2622387_640" id="nzi-fP-g4p">
-                            <rect key="frame" x="0.0" y="-64" width="320" height="480"/>
+                            <rect key="frame" x="0.0" y="-64" width="320" height="568"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         </imageView>
@@ -87,8 +87,8 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ponts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14k-fc-3mu">
-                                            <rect key="frame" x="50.5" y="89" width="43.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="54" y="93" width="37" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -108,6 +108,7 @@
                                     <outlet property="driverNameLabel" destination="bNZ-sV-Fu1" id="EZm-id-sjV"/>
                                     <outlet property="driverPositionLabel" destination="kxj-5x-Dxn" id="II3-bm-44w"/>
                                     <outlet property="pointsLabel" destination="6UO-uG-JUO" id="NVx-ee-e3d"/>
+                                    <segue destination="RQL-56-wLG" kind="show" identifier="WebView" id="8CE-ej-svC"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -120,7 +121,52 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cm-Ed-40j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023.75" y="143.66197183098592"/>
+            <point key="canvasLocation" x="1023.75" y="142.5"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="Kxx-0i-IiG">
+            <objects>
+                <viewController id="RQL-56-wLG" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RDn-IO-J2C"/>
+                        <viewControllerLayoutGuide type="bottom" id="ShN-pw-Id8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zhs-L1-zHe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfB-Pr-Swi">
+                                <rect key="frame" x="16" y="114" width="288" height="444"/>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe here to return" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7d-3R-bDg">
+                                <rect key="frame" x="82" y="85" width="156" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="jrl-uz-ABp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="rfB-Pr-Swi" secondAttribute="trailing" id="LmB-r7-1wV"/>
+                            <constraint firstItem="rfB-Pr-Swi" firstAttribute="top" secondItem="RDn-IO-J2C" secondAttribute="bottom" constant="50" id="LtU-bt-NNv"/>
+                            <constraint firstItem="ShN-pw-Id8" firstAttribute="top" secondItem="rfB-Pr-Swi" secondAttribute="bottom" constant="10" id="Yob-oE-dkY"/>
+                            <constraint firstItem="rfB-Pr-Swi" firstAttribute="leading" secondItem="Zhs-L1-zHe" secondAttribute="leadingMargin" id="cJY-CL-fDA"/>
+                            <constraint firstItem="rfB-Pr-Swi" firstAttribute="top" secondItem="h7d-3R-bDg" secondAttribute="bottom" constant="8" id="xbr-xr-dZk"/>
+                            <constraint firstItem="h7d-3R-bDg" firstAttribute="centerX" secondItem="Zhs-L1-zHe" secondAttribute="centerX" id="zBd-dr-UOh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="IzX-8g-uxG"/>
+                    <connections>
+                        <outlet property="topBarTitleLabel" destination="IzX-8g-uxG" id="xuX-Nx-e62"/>
+                        <outlet property="webView" destination="rfB-Pr-Swi" id="HzM-s5-rb0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lvf-ge-LhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1729" y="144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Os4-KF-scQ">
@@ -130,6 +176,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Yk-4l-e7Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.94176238779999999" green="0.69588702920000001" blue="0.69494169949999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
