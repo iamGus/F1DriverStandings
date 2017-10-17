@@ -12,6 +12,10 @@
 #import "Driver.h"
 #import "WebViewController.h"
 
+#define CELL_WIDTH 145
+#define CELL_SPACING 10
+#define COLLECTIONVIEW_WIDTH 320
+
 @interface CollectionViewController ()
 
 @property (strong, nonatomic) NSMutableArray *drivers;
@@ -103,6 +107,18 @@ static NSString * const reuseIdentifier = @"DriverCell";
     //[self performSegueWithIdentifier:@"WebView" sender:self];
 }
 
+// Center the cells
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    NSInteger viewWidth = (NSInteger) [UIScreen mainScreen].bounds.size.width;
+    NSInteger totalCellWidth = CELL_WIDTH * 2;
+    NSInteger totalSpacingWidth = CELL_SPACING * 2;
+    
+    NSInteger leftInset = (viewWidth - (totalCellWidth + totalSpacingWidth)) / 2;
+    NSInteger rightInset = leftInset;
+    
+    return UIEdgeInsetsMake(15, leftInset, 0, rightInset);
+}
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -114,6 +130,7 @@ static NSString * const reuseIdentifier = @"DriverCell";
         webViewController.driver = driver;
     }
 }
+
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking

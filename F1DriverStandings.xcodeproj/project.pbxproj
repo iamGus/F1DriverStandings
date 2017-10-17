@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1802F2CE1F94D7B2004CDEDC /* DriverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F2CD1F94D7B2004CDEDC /* DriverCell.m */; };
 		1802F2D11F95005C004CDEDC /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F2D01F95005C004CDEDC /* WebViewController.m */; };
+		1806216C1F95E7DA00FCD05F /* CenterDriverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806216B1F95E7DA00FCD05F /* CenterDriverCell.m */; };
 		18D7DB7A1F90B408004A6473 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D7DB791F90B408004A6473 /* main.m */; };
 		18D7DB7D1F90B408004A6473 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D7DB7C1F90B408004A6473 /* AppDelegate.m */; };
 		18D7DB801F90B408004A6473 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D7DB7F1F90B408004A6473 /* ViewController.m */; };
@@ -25,6 +26,8 @@
 		1802F2CD1F94D7B2004CDEDC /* DriverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverCell.m; sourceTree = "<group>"; };
 		1802F2CF1F95005C004CDEDC /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		1802F2D01F95005C004CDEDC /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		1806216A1F95E7DA00FCD05F /* CenterDriverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterDriverCell.h; sourceTree = "<group>"; };
+		1806216B1F95E7DA00FCD05F /* CenterDriverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterDriverCell.m; sourceTree = "<group>"; };
 		18D7DB751F90B408004A6473 /* F1DriverStandings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = F1DriverStandings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D7DB791F90B408004A6473 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18D7DB7B1F90B408004A6473 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -86,6 +89,8 @@
 				18D7DB861F90B408004A6473 /* LaunchScreen.storyboard */,
 				18D7DB891F90B408004A6473 /* Info.plist */,
 				18D7DB781F90B408004A6473 /* Supporting Files */,
+				1806216A1F95E7DA00FCD05F /* CenterDriverCell.h */,
+				1806216B1F95E7DA00FCD05F /* CenterDriverCell.m */,
 			);
 			path = F1DriverStandings;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				18D7DB7D1F90B408004A6473 /* AppDelegate.m in Sources */,
 				1802F2CE1F94D7B2004CDEDC /* DriverCell.m in Sources */,
 				18D7DB7A1F90B408004A6473 /* main.m in Sources */,
+				1806216C1F95E7DA00FCD05F /* CenterDriverCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
