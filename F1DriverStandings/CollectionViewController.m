@@ -18,7 +18,7 @@
 
 @interface CollectionViewController ()
 
-@property (strong, nonatomic) NSMutableArray *drivers;
+@property (strong, nonatomic) NSMutableArray *drivers; // Store downloaded drivers
 
 @end
 
@@ -29,46 +29,47 @@ static NSString * const reuseIdentifier = @"DriverCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.drivers = [NSMutableArray array];
-    [self refreshDrivers];
+    self.drivers = [NSMutableArray array]; // setup drivers array
+    
+    [self refreshDrivers]; // Get drivers from API
    
 }
 
+// Get driver data as dictionary, put through model parser and then put in array.
 - (void) refreshDrivers {
     [[F1Api instance] getDrivers:^(NSDictionary * _Nullable dictionary, NSString * _Nullable errorMessage) {
         if (dictionary) {
             
             NSArray *dictionaries = [dictionary valueForKeyPath:@"MRData.StandingsTable.StandingsLists.DriverStandings"];
-            NSMutableArray *arr = [[NSMutableArray alloc]init]; //Temp array to store drivers
+            NSMutableArray *arr = [[NSMutableArray alloc]init]; // Temp array to store drivers
             
             for (NSDictionary *dict in dictionaries[0]) { // As there is a array in a array set loop to only look at first index
                 Driver *driver = [Driver driversWithDictionary:dict];
-                [arr addObject:driver]; // Add each driver to tempory array
+                [arr addObject:driver]; // Add each driver to temporary array
             }
             
-            self.drivers = arr; // Add tempory array of all drivers to main drivers array
-            NSLog(@"%@",self.drivers);
+            self.drivers = arr; // Add temporary array of all drivers to main drivers array
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.collectionView reloadData];
             });
             
             
         } else if (errorMessage) {
-            //Display alert to user
+            // Display alert to user, this is a general alert, could be improved by finding out exact error code and display appropriate text.
             NSLog(@"Error: %@", errorMessage);
+            NSString *title = @"Alert";
+            NSString *message = @"Could not retrive data, please check your internet connection and try again";
+            NSString *okText = @"OK";
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *okButton = [UIAlertAction actionWithTitle:okText style:UIAlertActionStyleCancel handler:nil];
+            [alert addAction:okButton];
+            
+            [self presentViewController:alert animated:YES completion:nil];
         }
     }];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -87,13 +88,14 @@ static NSString * const reuseIdentifier = @"DriverCell";
     
     // If cell empty
     if (!cell) {
-        cell = [[DriverCell alloc]init];
+        cell = [[DriverCell alloc]init]; // If cell empty setup empty cell
     }
     
     return cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    // Setup DriverCell view
     
     Driver *driver = [self.drivers objectAtIndex:indexPath.row];
     DriverCell *driverCell = (DriverCell*)cell;
@@ -103,11 +105,9 @@ static NSString * const reuseIdentifier = @"DriverCell";
 #pragma mark <UICollectionViewDelegate>
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    //[self performSegueWithIdentifier:@"WebView" sender:self];
 }
 
-// Center the cells
+// Centre the cells
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     NSInteger viewWidth = (NSInteger) [UIScreen mainScreen].bounds.size.width;
     NSInteger totalCellWidth = CELL_WIDTH * 2;
@@ -121,6 +121,7 @@ static NSString * const reuseIdentifier = @"DriverCell";
 
 #pragma mark - Navigation
 
+// Sending a drivers details to WebViewController
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"WebView"]) {
         NSIndexPath *selectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
@@ -130,35 +131,5 @@ static NSString * const reuseIdentifier = @"DriverCell";
         webViewController.driver = driver;
     }
 }
-
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end

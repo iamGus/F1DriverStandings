@@ -10,20 +10,19 @@
 #import "Driver.h"
 
 @interface DriverCell()
+
+//Setup outlets
 @property (weak, nonatomic) IBOutlet UILabel *driverNameLabel;
 @property (weak, nonatomic) IBOutlet UIView *driverBackground;
 @property (weak, nonatomic) IBOutlet UILabel *driverPositionLabel;
-
-
 @property (weak, nonatomic) IBOutlet UILabel *driverCodeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
-
-
 
 @end
 
 @implementation DriverCell
 
+// Corner Radius for each cell
 - (void)awakeFromNib {
     
     self.layer.cornerRadius = 5.0;
@@ -34,6 +33,8 @@
     [super awakeFromNib];
 }
 
+
+// Update labels, called from CollectionView
 -(void)updateUI:(nonnull Driver*)driver {
     self.driverNameLabel.text = [NSString stringWithFormat:@"%@ %@",driver.firstName, driver.lastName];
     self.driverPositionLabel.text = [NSString stringWithFormat:@"%d", driver.position];

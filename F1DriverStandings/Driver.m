@@ -8,8 +8,11 @@
 
 #import "Driver.h"
 
+// Model for driver
+
 @implementation Driver
 
+// Parsing of data from Dictionary into Driver type
 + (instancetype) driversWithDictionary:(NSDictionary *) dictionary {
     Driver *driver = [[Driver alloc] init];
     

@@ -127,7 +127,7 @@
         <!--Title-->
         <scene sceneID="Kxx-0i-IiG">
             <objects>
-                <viewController id="RQL-56-wLG" customClass="WebViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="RQL-56-wLG" customClass="WebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RDn-IO-J2C"/>
                         <viewControllerLayoutGuide type="bottom" id="ShN-pw-Id8"/>
@@ -145,7 +145,7 @@
                                     <constraint firstAttribute="height" constant="21" id="jrl-uz-ABp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.35303375124931335" green="0.094278551638126373" blue="0.069076694548130035" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

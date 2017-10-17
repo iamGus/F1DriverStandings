@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ParsingProtocol.h"
 
-@interface Driver : NSObject
+
+@interface Driver : NSObject <ParsingProtocol>
 
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;

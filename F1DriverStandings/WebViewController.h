@@ -10,7 +10,7 @@
 
 @class Driver;
 
-@interface WebViewController : UIViewController
+@interface WebViewController : UIViewController <UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 

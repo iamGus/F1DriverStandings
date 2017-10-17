@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @class Driver;
 
 @interface DriverCell : UICollectionViewCell

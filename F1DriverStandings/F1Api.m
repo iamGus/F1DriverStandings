@@ -24,6 +24,8 @@
     return sharedInstance;
 }
 
+
+/// Downloads JSON and coverts it to a dictionary
 - (void) getDrivers:(nullable onComplete)completionHandler {
     NSURLSession *session = [NSURLSession sharedSession];
     NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"%s%s", URL_BASE, URL_DRIVERS]];
@@ -34,7 +36,7 @@
             NSError *error;
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error]; // Json into dictionary
             
-            if (error == nil) { // If no errors then parse the json
+            if (error == nil) { // If no errors then send to completion handler
                 //NSLog(@"%@", json.description);
                 completionHandler(json, nil);
             } else {
@@ -43,7 +45,7 @@
         } else {
             // Could not get data error
             NSLog(@"Network Error: %@", error.debugDescription);
-            completionHandler(nil, @"Problem connecting to the server"); // General could not connect error, note maybe use switch statement to switch on the more detailed response error codes to send back a more detailed description of connection error
+            completionHandler(nil, @"Problem connecting to the server"); // General could not connect error, note future update, maybe use switch statement to switch on the more detailed response error codes to send back a more detailed description of connection error
         }
         
     }] resume];
