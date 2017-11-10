@@ -1,4 +1,4 @@
-# Project brief I was given to create app
+# F1DriverStandings Project brief
 
 For this project you will create an app, written entirely in Objective-C, that makes use of UICollectionViews, Asynchronous Networking, Gestures and Transitions.
 
